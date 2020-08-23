@@ -34,7 +34,7 @@ const marvelCharacters = {
             container.innerHTML = contentHTML;
             descricao.innerHTML = contentNameHtml;
         }).then(() => {
-            //mostrar personagem e card ao clicar
+            //mostrar nome, descrição e card ao selecionar personagem na lista
             const itemImg = document.querySelectorAll(".marvel-row li");
             const itemDescricao = document.querySelectorAll(".descricao section");
             itemDescricao[0].classList.add('ativo');
@@ -62,11 +62,20 @@ marvelCharacters.render();
 //pesquisar personagens 
 let btnHero = document.getElementById('btnHero');
 btnHero.addEventListener('click', handleClick);
+let heroInput = document.getElementById('hero');
+heroInput.addEventListener('keydown', (e) => {
+
+    if (e.keyCode == 13) {
+        e.preventDefault();
+        let hero = heroInput.value;
+        seachHero(hero);
+    }
+})
 
 function handleClick(event) {
     let inputHero = document.getElementById('hero');
     event.preventDefault();
-    const hero = inputHero.value;
+    let hero = heroInput.value;
     seachHero(hero);
 };
 
@@ -84,6 +93,6 @@ function seachHero(hero) {
             <p class="descricao">${hero.description}</p></div>
             `;
 
-        }).catch((erro) => { result.innerHTML = '<p> não encontrado<p>' })
+        }).catch((erro) => { alert('heroi nao encontrado') })
 
 }
