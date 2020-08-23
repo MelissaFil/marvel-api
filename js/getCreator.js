@@ -9,7 +9,7 @@ const marvelCreator = {
                 for (let creators of json.data.results) {
 
                     contentHTML += `
-                <option value ="${creators.firstName}">${creators.firstName}${creators.lastName}</option>
+                <option id="creatorsList" value ="${creators.id}">${creators.firstName}${creators.lastName}</option>
                 `
                 }
                 optionSelect.innerHTML = contentHTML;

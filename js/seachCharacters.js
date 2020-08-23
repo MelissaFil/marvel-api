@@ -13,7 +13,7 @@ heroInput.addEventListener('keydown', (e) => {
 })
 
 btnHero.addEventListener('click', (event) => {
-    let inputHero = document.getElementById('hero');
+
     event.preventDefault();
     let hero = heroInput.value;
 

@@ -44,6 +44,16 @@ form {
     background: linear-gradient(135deg, rgb(22, 22, 22), #252525);
 }
 
+.header_btn {
+    display: block;
+    padding: 10px;
+    color: white;
+    font-size: 1.20rem;
+    background: rgba(255, 20, 20, 0.692);
+    margin-left: 10px;
+    border-radius: 5px;
+}
+
 
 /*barra de personagens*/
 
@@ -134,12 +144,8 @@ adequando a telas menores de 1220px*/
 /*adequando a telas menores que 700px*/
 
 @media (max-width: 700px) {
-    body,
-    .seachHero {
+    body {
         display: block;
-    }
-    .seachHero img {
-        margin: 10px;
     }
     .marveCharacters ul {
         display: flex;
