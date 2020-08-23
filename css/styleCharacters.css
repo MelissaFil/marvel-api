@@ -1,0 +1,17 @@
+body {
+    grid-template-areas: "nav nav " "seachHero seachHero";
+}
+
+.seachHero {
+    grid-area: seachHero;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+
+.seachHero img {
+    max-width: 260px;
+    min-width: 60px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 15px 0px rgba(44, 44, 44, 0.15);
+    padding: 10px;
+}

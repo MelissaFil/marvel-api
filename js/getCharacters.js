@@ -15,7 +15,7 @@ const marvelCharacters = {
                 <section>
                 <div><h1>${hero.name}</h1><p>${hero.description}</p></div>
                 
-                <div class="card"><img src="${hero.thumbnail.path}.${hero.thumbnail.extension}">
+                <div class="description_card"><img src="${hero.thumbnail.path}.${hero.thumbnail.extension}">
                 <h4>${hero.name}</h4>    
                 <p>Nº comics: ${hero.comics.available}</p>   
                 <p>Nº series: ${hero.series.available}</p> 
@@ -30,14 +30,14 @@ const marvelCharacters = {
         }).then(() => {
             //mostrar nome, descrição e card ao selecionar personagem na lista
             const itemImg = document.querySelectorAll(".marvel-row li");
-            const itemDescription = document.querySelectorAll(".description section");
-            itemDescription[0].classList.add('active');
+            const sectionDescription = document.querySelectorAll(".description section");
+            sectionDescription[0].classList.add('active');
 
             function activate(index) {
-                itemDescription.forEach((item) => {
+                sectionDescription.forEach((item) => {
                     item.classList.remove('active');
                 })
-                itemDescription[index].classList.add('active');
+                sectionDescription[index].classList.add('active');
             }
 
             itemImg.forEach((item, index) => {

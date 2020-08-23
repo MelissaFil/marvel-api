@@ -25,28 +25,11 @@ a {
 body {
     display: grid;
     grid-template-columns: 1fr 3fr;
-    grid-template-areas: "nav nav " "seachRow seachRow " "marvelCharacters description ";
+    grid-template-areas: "nav nav " "marvelCharacters description ";
 }
 
 
-/*resultado da pesquisa*/
-
-.seachHero {
-    grid-area: seachRow;
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-}
-
-.seachHero img {
-    max-width: 260px;
-    min-width: 60px;
-    border-radius: 5px;
-    box-shadow: 5px 5px 15px 0px rgba(44, 44, 44, 0.15);
-    padding: 10px;
-}
-
-
-/*header do body*/
+/*header*/
 
 form {
     margin-right: 20px;
@@ -55,7 +38,7 @@ form {
 .header {
     grid-area: nav;
     display: grid;
-    grid-template-columns: 1fr auto;
+    grid-template-columns: 1fr auto auto;
     padding: 20px;
     align-items: center;
     background: linear-gradient(135deg, rgb(22, 22, 22), #252525);
@@ -102,7 +85,7 @@ form {
     grid-template-columns: 3fr 2fr;
 }
 
-.card {
+.description_card {
     border-radius: 5px;
     box-shadow: 5px 5px 15px 0px rgba(44, 44, 44, 0.15);
     max-width: 260px;
@@ -113,7 +96,7 @@ form {
 
 /*imagens*/
 
-.card img {
+.description_card img {
     max-width: 250px;
 }
 
