@@ -3,7 +3,7 @@ const marvelCharacters = {
     render: () => {
         let urlAPI = 'https://gateway.marvel.com:443/v1/public/characters?ts=1&apikey=48c27997ef485a4f2ce8f29dc05d15ff&hash=82c6344ac583e67310f753bfb6ef2137';
         let container = document.querySelector('#marvel-row');
-        let descricao = document.querySelector('#descricao')
+        let description = document.querySelector('#description')
         let contentHTML = '';
         let contentNameHtml = '';
 
@@ -13,41 +13,35 @@ const marvelCharacters = {
                 contentHTML += `<li> <img src="${hero.thumbnail.path}.${hero.thumbnail.extension}"></li>`
                 contentNameHtml += `
                 <section>
-                <div >
-                <h1>${hero.name}</h1><p>${hero.description}</p>  
-                </div>
-                <div class="card">
-                <img src="${hero.thumbnail.path}.${hero.thumbnail.extension}">  
+                <div><h1>${hero.name}</h1><p>${hero.description}</p></div>
                 
+                <div class="card"><img src="${hero.thumbnail.path}.${hero.thumbnail.extension}">
                 <h4>${hero.name}</h4>    
                 <p>Nº comics: ${hero.comics.available}</p>   
                 <p>Nº series: ${hero.series.available}</p> 
-                <p>Nº stories: ${hero.stories.available}</p>  
-                
-                </div>
+                <p>Nº stories: ${hero.stories.available}</p></div>
+               
                 </section>
                 
                 `
-
-
             }
             container.innerHTML = contentHTML;
-            descricao.innerHTML = contentNameHtml;
+            description.innerHTML = contentNameHtml;
         }).then(() => {
             //mostrar nome, descrição e card ao selecionar personagem na lista
             const itemImg = document.querySelectorAll(".marvel-row li");
-            const itemDescricao = document.querySelectorAll(".descricao section");
-            itemDescricao[0].classList.add('ativo');
+            const itemDescription = document.querySelectorAll(".description section");
+            itemDescription[0].classList.add('active');
 
-            function ativar(index) {
-                itemDescricao.forEach((item) => {
-                    item.classList.remove('ativo');
+            function activate(index) {
+                itemDescription.forEach((item) => {
+                    item.classList.remove('active');
                 })
-                itemDescricao[index].classList.add('ativo');
+                itemDescription[index].classList.add('active');
             }
 
             itemImg.forEach((item, index) => {
-                item.addEventListener('click', () => { ativar(index); });
+                item.addEventListener('click', () => { activate(index); });
             })
 
         })

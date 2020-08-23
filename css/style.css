@@ -25,19 +25,19 @@ a {
 body {
     display: grid;
     grid-template-columns: 1fr 3fr;
-    grid-template-areas: "nav nav " "seachRow seachRow " "marvelCharacters descricao ";
+    grid-template-areas: "nav nav " "seachRow seachRow " "marvelCharacters description ";
 }
 
 
 /*resultado da pesquisa*/
 
-.seachRow {
+.seachHero {
     grid-area: seachRow;
     display: grid;
     grid-template-columns: 1fr 3fr;
 }
 
-.seachRow img {
+.seachHero img {
     max-width: 260px;
     min-width: 60px;
     border-radius: 5px;
@@ -86,17 +86,17 @@ form {
 
 /*stilo da descrição e card dos pensonagens*/
 
-.descricao {
-    grid-area: descricao;
+.description {
+    grid-area: description;
 }
 
-.descricao section {
+.description section {
     margin-top: 50px;
     padding: 15px;
     display: none;
 }
 
-.descricao section.ativo {
+.description section.active {
     display: block;
     display: grid;
     grid-template-columns: 3fr 2fr;
@@ -139,7 +139,7 @@ form {
 adequando a telas menores de 1220px*/
 
 @media (max-width: 1200px) {
-    .descricao section.ativo {
+    .description section.active {
         grid-template-columns: 1fr;
     }
     .marveCharacters ul {
@@ -152,10 +152,10 @@ adequando a telas menores de 1220px*/
 
 @media (max-width: 700px) {
     body,
-    .seachRow {
+    .seachHero {
         display: block;
     }
-    .seachRow img {
+    .seachHero img {
         margin: 10px;
     }
     .marveCharacters ul {
@@ -169,7 +169,7 @@ adequando a telas menores de 1220px*/
     .marveCharacters {
         overflow-x: auto;
     }
-    .descricao section {
+    .description section {
         margin-top: 10px;
     }
 }
