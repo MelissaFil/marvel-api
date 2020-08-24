@@ -2,6 +2,12 @@ body {
     grid-template-areas: "nav nav " "seachHero seachHero";
 }
 
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
 .seachHero {
     grid-area: seachHero;
     display: grid;

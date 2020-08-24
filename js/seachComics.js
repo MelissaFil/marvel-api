@@ -21,26 +21,15 @@ function seachHero(creator) {
 
             function getNames(item) {
 
-                const fullname = [item.name].join("");
+                const fullname = `<a href="${item.resourceURI}"><div class="series">${[item.name].join(" ")} </div></a>`
                 return fullname;
             }
 
 
             function names() {
-                result.innerHTML = body.data.results[0].creators.items.map(getNames);
+                result.innerHTML = body.data.results[0].collectedIssues.map(getNames);
             }
             names();
-
-            //   for (let comic of body.data.results) {
-
-
-            //         contentHTML += `
-            //    <div>${comic.creators.items[0].name}</div>
-            //     `
-
-            //   }
-
-            // result.innerHTML = contentHTML;
         })
 
 }
