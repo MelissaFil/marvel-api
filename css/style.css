@@ -25,28 +25,18 @@ a {
 body {
     display: grid;
     grid-template-columns: 1fr 3fr;
-    grid-template-areas: "nav nav " "seachRow seachRow " "marvelCharacters descricao ";
+    grid-template-areas: "nav nav " "marvelCharacters description " "footer footer";
 }
 
-
-/*resultado da pesquisa*/
-
-.seachRow {
-    grid-area: seachRow;
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-}
-
-.seachRow img {
-    max-width: 260px;
-    min-width: 60px;
-    border-radius: 5px;
-    box-shadow: 5px 5px 15px 0px rgba(44, 44, 44, 0.15);
+footer {
     padding: 10px;
+    color: white;
+    grid-area: footer;
+    background: linear-gradient(135deg, rgb(22, 22, 22), #252525);
 }
 
 
-/*header do body*/
+/*header*/
 
 form {
     margin-right: 20px;
@@ -55,10 +45,20 @@ form {
 .header {
     grid-area: nav;
     display: grid;
-    grid-template-columns: 1fr auto;
+    grid-template-columns: 1fr auto auto;
     padding: 20px;
     align-items: center;
     background: linear-gradient(135deg, rgb(22, 22, 22), #252525);
+}
+
+.header_btn {
+    display: block;
+    padding: 10px;
+    color: white;
+    font-size: 1.20rem;
+    background: rgba(255, 20, 20, 0.692);
+    margin-left: 10px;
+    border-radius: 5px;
 }
 
 
@@ -86,23 +86,23 @@ form {
 
 /*stilo da descrição e card dos pensonagens*/
 
-.descricao {
-    grid-area: descricao;
+.description {
+    grid-area: description;
 }
 
-.descricao section {
+.description section {
     margin-top: 50px;
     padding: 15px;
     display: none;
 }
 
-.descricao section.ativo {
+.description section.active {
     display: block;
     display: grid;
     grid-template-columns: 3fr 2fr;
 }
 
-.card {
+.description_card {
     border-radius: 5px;
     box-shadow: 5px 5px 15px 0px rgba(44, 44, 44, 0.15);
     max-width: 260px;
@@ -113,7 +113,7 @@ form {
 
 /*imagens*/
 
-.card img {
+.description_card img {
     max-width: 250px;
 }
 
@@ -139,7 +139,7 @@ form {
 adequando a telas menores de 1220px*/
 
 @media (max-width: 1200px) {
-    .descricao section.ativo {
+    .description section.active {
         grid-template-columns: 1fr;
     }
     .marveCharacters ul {
@@ -151,12 +151,8 @@ adequando a telas menores de 1220px*/
 /*adequando a telas menores que 700px*/
 
 @media (max-width: 700px) {
-    body,
-    .seachRow {
+    body {
         display: block;
-    }
-    .seachRow img {
-        margin: 10px;
     }
     .marveCharacters ul {
         display: flex;
@@ -169,7 +165,7 @@ adequando a telas menores de 1220px*/
     .marveCharacters {
         overflow-x: auto;
     }
-    .descricao section {
+    .description section {
         margin-top: 10px;
     }
 }

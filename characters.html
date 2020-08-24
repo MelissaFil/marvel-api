@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/styleCharacters.css">
 
     <title>Document</title>
 </head>
@@ -13,27 +14,25 @@
 
     <header class="header">
         <a href="/index.html"><img src="./img/logo.jpg" class="logo" alt=""> </a>
-        <a class="header_btn" href="./comics.html">Comicss</a>
-        <a class="header_btn" href="./characters.html">Seach hero</a>
+
+        <nav>
+            <form class=" formChar">
+
+                <input id="formChar_inputHero" type="text" name="formChar_inputHero" class="formChar_inputHero" placeholder="seach hero">
+                <input type="button" value="seach" id="formChar_btnHero">
+            </form>
+        </nav>
     </header>
-    <nav class="marveCharacters">
-        <ul class="marvel-row" id="marvel-row">
-        </ul>
-    </nav>
 
-
-    <div class="description" id="description">
+    <div class="seachHero" id="seachHero">
     </div>
 
 
-
-
+    <footer>TESTE BETHA</footer>
 
     <script src="./js/seachCharacters.js"></script>
-    <script src="./js/getCharacters.js"></script>
     <script src="./js/getCreator.js"></script>
 
-    <footer>TESTE BETHA</footer>
 </body>
 
 
