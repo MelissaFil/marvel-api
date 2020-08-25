@@ -5,7 +5,7 @@ p,
 h1,
 ul,
 li,
-blockquote {
+a {
     padding: 0px;
     margin: 0px;
     font-family: Nunito, Arial, Helvetica, sans-serif;
@@ -19,153 +19,72 @@ a {
     text-decoration: none;
 }
 
-
-/*definir grid*/
-
-body {
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    grid-template-areas: "nav nav " "marvelCharacters description " "footer footer";
-}
-
-footer {
-    padding: 10px;
-    color: white;
-    grid-area: footer;
-    background: linear-gradient(135deg, rgb(22, 22, 22), #252525);
-}
-
-
-/*header*/
-
-form {
-    margin-right: 20px;
+main {
+    background: rgba(111, 128, 144, 0.116);
 }
 
 .header {
-    grid-area: nav;
-    display: grid;
-    grid-template-columns: 1fr auto auto;
-    padding: 20px;
+    padding: 15px;
     align-items: center;
-    background: linear-gradient(135deg, rgb(22, 22, 22), #252525);
+    background: linear-gradient(135deg, rgb(22, 22, 22), #2b2a2a);
 }
 
-.header_btn {
-    display: block;
-    padding: 10px;
-    color: white;
-    font-size: 1.20rem;
-    background: rgba(255, 20, 20, 0.692);
+.header_btn button {
     margin-left: 10px;
+}
+
+.logo {
+    width: 85px;
+}
+
+.inicio img {
+    width: 100%;
+}
+
+.marveCharacters ul li {
+    background-color: rgba(111, 128, 144, 0.116);
+}
+
+.marvel-row {
+    display: flex;
+    overflow-x: auto;
+}
+
+.marvel-row img {
+    margin: 10px 5px 10px 5px;
+    width: 200px;
+    height: 200px;
+    border: 3px solid white;
     border-radius: 5px;
-}
-
-
-/*barra de personagens*/
-
-.marveCharacters ul {
-    grid-area: marvelCharacters;
-    height: 360px;
-    overflow-y: scroll;
-    cursor: pointer;
-    margin: 50px;
-}
-
-.marveCharacters ul::-webkit-scrollbar {
-    width: 15px;
-    border-radius: 5px;
-}
-
-.marveCharacters ul::-webkit-scrollbar-thumb {
-    background: rgb(65, 64, 63);
-    border: 2px solid #ffffff;
-    border-radius: 5px;
-}
-
-
-/*stilo da descrição e card dos pensonagens*/
-
-.description {
-    grid-area: description;
 }
 
 .description section {
-    margin-top: 50px;
-    padding: 15px;
     display: none;
 }
 
 .description section.active {
-    display: block;
     display: grid;
-    grid-template-columns: 3fr 2fr;
+    grid-template-columns: 3fr 1fr;
 }
 
-.description_card {
-    border-radius: 5px;
-    box-shadow: 5px 5px 15px 0px rgba(44, 44, 44, 0.15);
-    max-width: 260px;
-    min-width: 60px;
-    margin: 40px;
+.description section.active img {
+    width: 300px;
 }
 
-
-/*imagens*/
-
-.description_card img {
-    max-width: 250px;
+footer {
+    background: linear-gradient(135deg, rgb(22, 22, 22), #2b2a2a);
+    color: white;
+    font-size: 20px;
 }
 
-.logo {
-    max-width: 80px;
-}
-
-.marveCharacters img {
-    max-width: 260px;
-    min-width: 60px;
-    border-radius: 5px;
-    box-shadow: 5px 5px 15px 0px rgb(44, 44, 44, 0.15);
-    padding: 10px;
-    transition: 0.2s ease-in-out;
-}
-
-.marveCharacters li img:hover {
-    background: rgba(48, 47, 47, .15);
-}
-
-
-/*responsividada
-adequando a telas menores de 1220px*/
-
-@media (max-width: 1200px) {
+@media(max-width: 590px) {
     .description section.active {
         grid-template-columns: 1fr;
     }
-    .marveCharacters ul {
-        height: 450px;
-    }
-}
-
-
-/*adequando a telas menores que 700px*/
-
-@media (max-width: 700px) {
-    body {
-        display: block;
-    }
-    .marveCharacters ul {
-        display: flex;
-        margin: 10px;
-        height: 280px;
-    }
-    .marveCharacters ul li {
-        flex: 1 0 60px;
-    }
-    .marveCharacters {
-        overflow-x: auto;
-    }
-    .description section {
-        margin-top: 10px;
+    .header_btn button {
+        margin-left: 5px;
+        font-size: 10px;
+        padding: 5px;
+        margin: 0;
     }
 }

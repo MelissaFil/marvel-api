@@ -1,17 +1,19 @@
-span {
+main {
+    background: black;
+}
+
+.comics {
+    background: black;
+}
+
+.comics a {
     color: black;
+    margin-left: 10px;
+}
+
+.series {
+    padding: 10px;
     border: 1px solid black;
     border-radius: 5px;
-    margin: 20px;
-    box-shadow: rgba(0, 0, 0, .2);
-}
-
-span a {
-    color: black;
-}
-
-footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+    background: white;
 }

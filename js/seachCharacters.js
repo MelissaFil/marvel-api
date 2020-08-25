@@ -29,9 +29,11 @@ function seachHero(hero) {
 
             let hero = body.data.results[0];
             result.innerHTML = `
-           <div> <img style="margin:50px;" src="${hero.thumbnail.path}.${hero.thumbnail.extension}"></div>
-            <div style="margin:50px;" class="seachHero_name"><h1> ${hero.name}</h1>
+           
+            <div class="seachHero_name "><h1> ${hero.name}</h1>
             <p class="seachHero_description">${hero.description}</p></div>
+
+            <div class="seachHero_image"> <img src="${hero.thumbnail.path}.${hero.thumbnail.extension}" ></div>
             `;
 
         }).catch((erro) => { alert('heroi nao encontrado') })
